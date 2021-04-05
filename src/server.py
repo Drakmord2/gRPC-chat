@@ -1,5 +1,3 @@
-"""The Python AsyncIO implementation of the gRPC route guide server."""
-
 import time
 import logging
 from concurrent.futures import ThreadPoolExecutor

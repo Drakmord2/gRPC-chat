@@ -15,11 +15,11 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='chat.proto',
-  package='chat',
+  package='',
   syntax='proto3',
-  serialized_options=b'\n\022com.drakmord2.chatB\tChatProtoP\001\242\002\003HLW',
+  serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\nchat.proto\x12\x04\x63hat\"%\n\x04Post\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x07\n\x05\x45mpty2\x99\x01\n\x04\x43hat\x12%\n\x06Stream\x12\x0b.chat.Empty\x1a\n.chat.Post\"\x00\x30\x01\x12\"\n\x05Login\x12\n.chat.Post\x1a\x0b.chat.Empty\"\x00\x12#\n\x06Logout\x12\n.chat.Post\x1a\x0b.chat.Empty\"\x00\x12!\n\x04Send\x12\n.chat.Post\x1a\x0b.chat.Empty\"\x00\x42\'\n\x12\x63om.drakmord2.chatB\tChatProtoP\x01\xa2\x02\x03HLWb\x06proto3'
+  serialized_pb=b'\n\nchat.proto\"%\n\x04Post\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x07\n\x05\x45mpty2q\n\x04\x43hat\x12\x1b\n\x06Stream\x12\x06.Empty\x1a\x05.Post\"\x00\x30\x01\x12\x18\n\x05Login\x12\x05.Post\x1a\x06.Empty\"\x00\x12\x19\n\x06Logout\x12\x05.Post\x1a\x06.Empty\"\x00\x12\x17\n\x04Send\x12\x05.Post\x1a\x06.Empty\"\x00\x62\x06proto3'
 )
 
 
@@ -27,21 +27,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _POST = _descriptor.Descriptor(
   name='Post',
-  full_name='chat.Post',
+  full_name='Post',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='user', full_name='chat.Post.user', index=0,
+      name='user', full_name='Post.user', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='message', full_name='chat.Post.message', index=1,
+      name='message', full_name='Post.message', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -59,14 +59,14 @@ _POST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20,
-  serialized_end=57,
+  serialized_start=14,
+  serialized_end=51,
 )
 
 
 _EMPTY = _descriptor.Descriptor(
   name='Empty',
-  full_name='chat.Empty',
+  full_name='Empty',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -84,8 +84,8 @@ _EMPTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=59,
-  serialized_end=66,
+  serialized_start=53,
+  serialized_end=60,
 )
 
 DESCRIPTOR.message_types_by_name['Post'] = _POST
@@ -95,33 +95,32 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 Post = _reflection.GeneratedProtocolMessageType('Post', (_message.Message,), {
   'DESCRIPTOR' : _POST,
   '__module__' : 'chat_pb2'
-  # @@protoc_insertion_point(class_scope:chat.Post)
+  # @@protoc_insertion_point(class_scope:Post)
   })
 _sym_db.RegisterMessage(Post)
 
 Empty = _reflection.GeneratedProtocolMessageType('Empty', (_message.Message,), {
   'DESCRIPTOR' : _EMPTY,
   '__module__' : 'chat_pb2'
-  # @@protoc_insertion_point(class_scope:chat.Empty)
+  # @@protoc_insertion_point(class_scope:Empty)
   })
 _sym_db.RegisterMessage(Empty)
 
 
-DESCRIPTOR._options = None
 
 _CHAT = _descriptor.ServiceDescriptor(
   name='Chat',
-  full_name='chat.Chat',
+  full_name='Chat',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=69,
-  serialized_end=222,
+  serialized_start=62,
+  serialized_end=175,
   methods=[
   _descriptor.MethodDescriptor(
     name='Stream',
-    full_name='chat.Chat.Stream',
+    full_name='Chat.Stream',
     index=0,
     containing_service=None,
     input_type=_EMPTY,
@@ -131,7 +130,7 @@ _CHAT = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Login',
-    full_name='chat.Chat.Login',
+    full_name='Chat.Login',
     index=1,
     containing_service=None,
     input_type=_POST,
@@ -141,7 +140,7 @@ _CHAT = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Logout',
-    full_name='chat.Chat.Logout',
+    full_name='Chat.Logout',
     index=2,
     containing_service=None,
     input_type=_POST,
@@ -151,7 +150,7 @@ _CHAT = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Send',
-    full_name='chat.Chat.Send',
+    full_name='Chat.Send',
     index=3,
     containing_service=None,
     input_type=_POST,

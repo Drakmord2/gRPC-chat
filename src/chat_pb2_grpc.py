@@ -16,22 +16,22 @@ class ChatStub(object):
             channel: A grpc.Channel.
         """
         self.Stream = channel.unary_stream(
-                '/chat.Chat/Stream',
+                '/Chat/Stream',
                 request_serializer=chat__pb2.Empty.SerializeToString,
                 response_deserializer=chat__pb2.Post.FromString,
                 )
         self.Login = channel.unary_unary(
-                '/chat.Chat/Login',
+                '/Chat/Login',
                 request_serializer=chat__pb2.Post.SerializeToString,
                 response_deserializer=chat__pb2.Empty.FromString,
                 )
         self.Logout = channel.unary_unary(
-                '/chat.Chat/Logout',
+                '/Chat/Logout',
                 request_serializer=chat__pb2.Post.SerializeToString,
                 response_deserializer=chat__pb2.Empty.FromString,
                 )
         self.Send = channel.unary_unary(
-                '/chat.Chat/Send',
+                '/Chat/Send',
                 request_serializer=chat__pb2.Post.SerializeToString,
                 response_deserializer=chat__pb2.Empty.FromString,
                 )
@@ -90,7 +90,7 @@ def add_ChatServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'chat.Chat', rpc_method_handlers)
+            'Chat', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -110,7 +110,7 @@ class Chat(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/chat.Chat/Stream',
+        return grpc.experimental.unary_stream(request, target, '/Chat/Stream',
             chat__pb2.Empty.SerializeToString,
             chat__pb2.Post.FromString,
             options, channel_credentials,
@@ -127,7 +127,7 @@ class Chat(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/chat.Chat/Login',
+        return grpc.experimental.unary_unary(request, target, '/Chat/Login',
             chat__pb2.Post.SerializeToString,
             chat__pb2.Empty.FromString,
             options, channel_credentials,
@@ -144,7 +144,7 @@ class Chat(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/chat.Chat/Logout',
+        return grpc.experimental.unary_unary(request, target, '/Chat/Logout',
             chat__pb2.Post.SerializeToString,
             chat__pb2.Empty.FromString,
             options, channel_credentials,
@@ -161,7 +161,7 @@ class Chat(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/chat.Chat/Send',
+        return grpc.experimental.unary_unary(request, target, '/Chat/Send',
             chat__pb2.Post.SerializeToString,
             chat__pb2.Empty.FromString,
             options, channel_credentials,

@@ -1,12 +1,5 @@
 syntax = "proto3"; //Specify proto3 version.
 
-option java_multiple_files = true;
-option java_package = "com.drakmord2.chat";
-option java_outer_classname = "ChatProto";
-option objc_class_prefix = "HLW";
-
-package chat;
-
 //Service class to be used by the clients
 service Chat {
     rpc Stream(Empty) returns (stream Post){}
